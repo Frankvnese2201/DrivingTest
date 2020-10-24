@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Driving License Exams">
+        <menu>
+            <group>
+            <item
+                android:id="@+id/B1"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="B1 List Of Tests" />
+            <item
+                android:id="@+id/B2"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="B2 List Of Tests" />
+            <item
+                android:id="@+id/C1"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="C1 List Of Tests" />
+            <item
+                android:id="@+id/C2"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="C2 List Of Tests" />
+            </group>
+        </menu>
+
+    </item>
+</menu>
