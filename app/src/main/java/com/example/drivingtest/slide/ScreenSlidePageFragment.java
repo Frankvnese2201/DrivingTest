@@ -37,6 +37,7 @@ public class ScreenSlidePageFragment extends Fragment {
         //Attach Question with viewPaper e.x: question 1 attached to slide 1
         arr_Quest=new ArrayList<Question>();
         ScreenSlideActivity slideActivity = (ScreenSlideActivity) getActivity();
+        assert slideActivity != null;
         arr_Quest= slideActivity.getData(); //get data to array question
 
         mPageNumber= getArguments().getInt("page"); //get position
@@ -96,7 +97,6 @@ public class ScreenSlidePageFragment extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 getItem(mPageNumber).choiceID = checkedId;
                 getItem(mPageNumber).setUserAnswer(getChoiceFromID(checkedId));
-                 //Toast.makeText(getActivity(),"This is answer "+ checkedId, Toast.LENGTH_SHORT).show();
 
             }
         });

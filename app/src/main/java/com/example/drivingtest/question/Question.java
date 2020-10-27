@@ -1,6 +1,8 @@
 package com.example.drivingtest.question;
 
-public class Question {
+import java.io.Serializable;
+
+public class Question implements Serializable {
     private int _id;
     private String Question;
     private String Answer1;

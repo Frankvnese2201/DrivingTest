@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".slide.ScreenSlideActivity"></activity>
+        <activity android:name=".slide.ResultActivity"></activity>
+        <activity android:name=".slide.ScreenSlideActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.DrivingTest.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,6 +1,7 @@
 package com.example.drivingtest.slide;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
@@ -25,15 +26,10 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class ScreenSlideActivity extends FragmentActivity {
-    /**
-     * The number of pages (wizard steps) to show in this demo.
-     */
+
     private static final int NUM_PAGES = 10;
 
-    /**
-     * The pager widget, which handles animation and allows swiping horizontally to access previous
-     * and next wizard steps.
-     */
+
     private ViewPager mPager;
 
     /**
@@ -41,7 +37,7 @@ public class ScreenSlideActivity extends FragmentActivity {
      */
     private PagerAdapter pagerAdapter;
 
-    TextView tvKiemTra, tvTimer, tvXemDiem;
+    TextView tvKiemTra, tvTimer, tvScore;
     public int checkAns=0;
     //DataBase
     QuestionController questionController;
@@ -72,6 +68,17 @@ public class ScreenSlideActivity extends FragmentActivity {
 
             }
         });
+        tvScore=(TextView) findViewById(R.id.tvScore);
+        //Redirect to Exam Result
+        tvScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                Intent intent= new Intent(ScreenSlideActivity.this, ResultActivity.class);
+                intent.putExtra("arr_Ques",arr_Ques);
+                startActivity(intent);
+            }
+        });
         timer.start();
         tvKiemTra =(TextView)findViewById(R.id.tvKiemTra);
         tvKiemTra.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +87,6 @@ public class ScreenSlideActivity extends FragmentActivity {
                 checkAnswer();
             }
         });
-        tvXemDiem =(TextView)findViewById(R.id.tvScore);
     }
 
 
@@ -206,7 +212,7 @@ public class ScreenSlideActivity extends FragmentActivity {
         checkAns=1;
         if(mPager.getCurrentItem()>=4) mPager.setCurrentItem(mPager.getCurrentItem()-4);
         else if (mPager.getCurrentItem() <4) mPager.setCurrentItem(mPager.getCurrentItem()+4);
-        tvXemDiem.setVisibility(View.VISIBLE);
+        tvScore.setVisibility(View.VISIBLE);
         tvKiemTra.setVisibility(View.GONE);
     }
     public class CounterClass extends CountDownTimer {
