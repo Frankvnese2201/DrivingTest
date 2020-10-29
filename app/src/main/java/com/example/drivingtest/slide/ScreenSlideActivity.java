@@ -172,8 +172,6 @@ public class ScreenSlideActivity extends FragmentActivity {
     {
         Dialog dialog=new Dialog(this);
         dialog.setContentView(R.layout.check_answer_dialog);
-        dialog.setTitle("List Of Answers");
-
         CheckAnswerAdapter answerAdapter = new CheckAnswerAdapter(arr_Ques,this);
         GridView gvLsQuestion =(GridView) dialog.findViewById(R.id.gvLsQuestion);
         gvLsQuestion.setAdapter(answerAdapter);
@@ -185,6 +183,7 @@ public class ScreenSlideActivity extends FragmentActivity {
                 dialog.dismiss();
             }
         });
+
         Button btnCancle, btnFinish;
         btnCancle=(Button) dialog.findViewById(R.id.btnCancle);
         btnFinish=(Button) dialog.findViewById(R.id.btnFinish);

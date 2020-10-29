@@ -41,6 +41,7 @@ public class ScreenSlidePageFragment extends Fragment {
         arr_Quest= slideActivity.getData(); //get data to array question
 
         mPageNumber= getArguments().getInt("page"); //get position
+
         checkAns=getArguments().getInt("checkAnswer");
     }
 

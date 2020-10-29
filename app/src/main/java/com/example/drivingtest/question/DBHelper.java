@@ -30,7 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void openDataBase() throws SQLException {
 
-        //Open the database
+
         String myPath = DB_PATH + DB_NAME;
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
@@ -59,7 +59,7 @@ public class DBHelper extends SQLiteOpenHelper {
             String myPath = DB_PATH + DB_NAME;
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
         } catch (SQLiteException e) {
-            //database is not exist
+
         }
 
         if (checkDB != null)
@@ -70,23 +70,23 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private void copyDataBase() throws IOException {
 
-        //mo db trong thu muc assets nhu mot input stream
+
         InputStream myInput = myContext.getAssets().open(DB_NAME);
 
-        //duong dan den db se tao
+
         String outFileName = DB_PATH + DB_NAME;
 
-        //mo db giong nhu mot output stream
+
         OutputStream myOutput = new FileOutputStream(outFileName);
 
-        //truyen du lieu tu inputfile sang outputfile
+
         byte[] buffer = new byte[1024];
         int length;
         while ((length = myInput.read(buffer)) > 0) {
             myOutput.write(buffer, 0, length);
         }
 
-        //Dong luon
+
         myOutput.flush();
         myOutput.close();
         myInput.close();
@@ -94,15 +94,14 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public void createDataBase() throws IOException {
-        boolean dbExist = checkDataBase(); //kiem tra db
+        boolean dbExist = checkDataBase();
 
         if (dbExist) {
-            //khong lam gi ca, database da co roi
-//            copyDataBase();
+
         } else {
             this.getReadableDatabase();
             try {
-                copyDataBase(); //chep du lieu
+                copyDataBase();
             } catch (IOException e) {
                 throw new Error("Error copying database");
             }

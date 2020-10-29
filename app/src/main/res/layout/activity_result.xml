@@ -110,28 +110,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp">
-
-        <TextView
-
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Result" />
-
-        <TextView
-            android:id="@+id/tvFinalResult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Pass" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
@@ -149,12 +127,6 @@
             android:layout_weight="1"
             android:text="New Exam" />
 
-        <Button
-            android:id="@+id/btnSaveScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Save Result" />
     </LinearLayout>
 
 </LinearLayout>

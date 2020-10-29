@@ -30,7 +30,7 @@ public class QuestionController {
                         cursor.getString(4),
                         cursor.getString(5),
                         cursor.getString(6),
-                        cursor.getInt(7),
+                         cursor.getInt(7),
                         cursor.getString(8),
                         cursor.getString(9),"");
                 listQuestion.add(item);
